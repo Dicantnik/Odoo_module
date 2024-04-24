@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+
+    <record id = "test_task_route_tree" model = "ir.ui.view">
+      <field name = "name">test.route.tree</field>
+      <field name = "model">test.route</field>
+      <field name = "arch" type = "xml">
+          <tree>
+              <field name = "route_number"/>
+<!--              <field name = "carrier_id"/>-->
+              <field name = "car_id"/>
+<!--              <field name = "order_ids"/>-->
+
+          </tree>
+      </field>
+    </record>
+
+    <record id = "test_task_route_form" model = "ir.ui.view">
+      <field name = "name">test.route.form</field>
+      <field name = "model">test.route</field>
+      <field name = "arch" type = "xml">
+          <form>
+              <header></header>
+              <sheet>
+                  <group>
+                    <field name = "route_number"/>
+<!--                    <field name = "carrier_id"/>-->
+                    <field name = "car_id"/>
+<!--                    <field name = "order_ids"/>-->
+                  </group>
+              </sheet>
+          </form>
+      </field>
+    </record>
+
+
+      <record id = "test_task_route_act_window" model = "ir.actions.act_window">
+        <field name = "name">Route</field>
+<!--        <field name = "type">ir.actions.act_window</field>-->
+        <field name = "res_model">test.route</field>
+        <field name = "view_mode">tree,form</field>
+      </record>
+
+      <menuitem id = "test_task_route_menu"
+                action = "test_task_route_act_window"
+                name = "Route"
+                parent= "test_task_list_menu"
+      />
+</odoo>

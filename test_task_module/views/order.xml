@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+
+    <record id = "test_task_order_tree" model = "ir.ui.view">
+      <field name = "name">test.order.tree</field>
+      <field name = "model">test.order</field>
+      <field name = "arch" type = "xml">
+          <tree>
+              <field name = "name"/>
+              <field name = "order_date"/>
+              <field name = "client_id"/>
+              <field name = "supplier_id"/>
+              <field name = "order_cost"/>
+              <field name = "order_weight"/>
+              <field name = "order_volume"/>
+              <field name = "order_line_ids"/>
+
+
+          </tree>
+      </field>
+    </record>
+
+    <record id = "test_task_order_form" model = "ir.ui.view">
+      <field name = "name">test.order.form</field>
+      <field name = "model">test.order</field>
+      <field name = "arch" type = "xml">
+          <form>
+              <header></header>
+              <sheet>
+                  <group>
+                        <field name = "name"/>
+                        <field name = "order_date"/>
+                        <field name = "client_id"/>
+                        <field name = "supplier_id"/>
+                        <field name = "order_cost"/>
+                        <field name = "order_weight"/>
+                        <field name = "order_volume"/>
+                        <field name = "order_line_ids"/>
+                  </group>
+              </sheet>
+          </form>
+      </field>
+    </record>
+
+
+      <record id = "test_task_order_act_window" model = "ir.actions.act_window">
+        <field name = "name">Order</field>
+<!--        <field name = "type">ir.actions.act_window</field>-->
+        <field name = "res_model">test.order</field>
+        <field name = "view_mode">tree,form</field>
+      </record>
+
+      <menuitem id = "test_task_order_menu"
+                action = "test_task_order_act_window"
+                name = "Order"
+                parent= "test_task_list_menu"
+      />
+</odoo>

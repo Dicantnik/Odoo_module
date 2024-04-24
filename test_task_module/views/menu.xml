@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+    <menuitem id = "test_task_main_menu"
+              name = "New Module"
+    />
+
+    <menuitem id = "test_task_list_menu"
+              name = "List Models"
+              parent= "test_task_main_menu"
+    />
+
+
+</odoo>

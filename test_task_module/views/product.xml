@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+
+    <record id = "test_task_product_tree" model = "ir.ui.view">
+      <field name = "name">test.product.tree</field>
+      <field name = "model">test.product</field>
+      <field name = "arch" type = "xml">
+          <tree>
+              <field name = "weight"/>
+              <field name = "volume"/>
+
+          </tree>
+      </field>
+    </record>
+
+    <record id = "test_task_product_form" model = "ir.ui.view">
+      <field name = "name">test.product.form</field>
+      <field name = "model">test.product</field>
+      <field name = "arch" type = "xml">
+          <form>
+              <header></header>
+              <sheet>
+                  <group>
+                    <field name = "weight"/>
+                    <field name = "volume"/>
+                  </group>
+              </sheet>
+          </form>
+      </field>
+    </record>
+
+
+      <record id = "test_task_product_act_window" model = "ir.actions.act_window">
+        <field name = "name">Product</field>
+<!--        <field name = "type">ir.actions.act_window</field>-->
+        <field name = "res_model">test.product</field>
+        <field name = "view_mode">tree,form</field>
+      </record>
+
+      <menuitem id = "test_task_product_menu"
+                action = "test_task_product_act_window"
+                name = "Product"
+                parent= "test_task_list_menu"
+      />
+</odoo>

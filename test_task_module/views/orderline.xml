@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+
+    <record id = "test_task_orderline_tree" model = "ir.ui.view">
+      <field name = "name">test.orderline.tree</field>
+      <field name = "model">test.orderline</field>
+      <field name = "arch" type = "xml">
+          <tree>
+              <field name = "order_id"/>
+              <field name = "product_id"/>
+              <field name = "price"/>
+              <field name = "count"/>
+              <field name = "cost"/>
+
+          </tree>
+      </field>
+    </record>
+
+    <record id = "test_task_orderline_form" model = "ir.ui.view">
+      <field name = "name">test.orderline.form</field>
+      <field name = "model">test.orderline</field>
+      <field name = "arch" type = "xml">
+          <form>
+              <header></header>
+              <sheet>
+                  <group>
+                    <field name = "order_id"/>
+                    <field name = "product_id"/>
+                    <field name = "price"/>
+                    <field name = "count"/>
+                    <field name = "cost"/>
+                  </group>
+              </sheet>
+          </form>
+      </field>
+    </record>
+
+
+      <record id = "test_task_orderline_act_window" model = "ir.actions.act_window">
+        <field name = "name">Orderline</field>
+<!--        <field name = "type">ir.actions.act_window</field>-->
+        <field name = "res_model">test.orderline</field>
+        <field name = "view_mode">tree,form</field>
+      </record>
+
+      <menuitem id = "test_task_orderline_menu"
+                action = "test_task_orderline_act_window"
+                name = "Orderline"
+                parent= "test_task_list_menu"
+      />
+</odoo>

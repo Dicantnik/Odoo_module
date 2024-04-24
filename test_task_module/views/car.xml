@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+
+    <record id = "test_task_car_tree" model = "ir.ui.view">
+      <field name = "name">test.car.tree</field>
+      <field name = "model">test.car</field>
+      <field name = "arch" type = "xml">
+          <tree>
+              <field name = "car_number"/>
+              <field name = "max_weight"/>
+              <field name = "max_volume"/>
+
+          </tree>
+      </field>
+    </record>
+
+    <record id = "test_task_car_form" model = "ir.ui.view">
+      <field name = "name">test.car.form</field>
+      <field name = "model">test.car</field>
+      <field name = "arch" type = "xml">
+          <form>
+              <header></header>
+              <sheet>
+                  <group>
+                    <field name = "car_number"/>
+                    <field name = "max_weight"/>
+                    <field name = "max_volume"/>
+                  </group>
+              </sheet>
+          </form>
+      </field>
+    </record>
+
+
+      <record id = "test_task_car_act_window" model = "ir.actions.act_window">
+        <field name = "name">Car</field>
+<!--        <field name = "type">ir.actions.act_window</field>-->
+        <field name = "res_model">test.car</field>
+        <field name = "view_mode">tree,form</field>
+      </record>
+
+      <menuitem id = "test_task_car_menu"
+                action = "test_task_car_act_window"
+                name = "Car"
+                parent= "test_task_list_menu"
+      />
+</odoo>
